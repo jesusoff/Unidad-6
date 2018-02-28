@@ -7,11 +7,11 @@
   <body>
     <?php
     include "conversion.php";
-
+    //creo objeto conversion
     $conversion = new conversion();
-
+    //paso lo introducido por formulario a la funcion setNumero
     $conversion->setNumero($_POST["numero"]);
-
+    //compruebo todas las combinaciones
     if ($_POST["origen"] == $_POST["destino"]) {
       echo $_POST["numero"]." ".$_POST["origen"]." = ".$_POST["numero"]." ".$_POST["destino"]."<br>";
     }elseif ($_POST["origen"] == "Euros" && $_POST["destino"] == "Libras") {
@@ -27,7 +27,6 @@
     }elseif ($_POST["origen"] == "Dolares" && $_POST["destino"] == "Libras") {
       echo $_POST["numero"]." ".$_POST["origen"]." = ".$conversion->dolaresLibras()." ".$_POST["destino"]."<br>";
     }
-
      ?>
   </body>
 </html>
